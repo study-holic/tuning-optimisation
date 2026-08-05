@@ -10,7 +10,7 @@ Companion code for the paper:
 
 ## What this does
 
-Most discussions of musical temperament describe 12-tone equal temperament (12-TET) as the "best compromise" without ever specifying what is being optimised. This tool makes the comparison precise.
+Most discussions of musical temperament describe 12-tone equal temperament (12-TET) as the "best compromise" without ever pinning down what's actually being optimised. This tool makes that comparison precise.
 
 Given a set of just-intonation targets, it:
 
@@ -87,11 +87,11 @@ Temperament evaluation (piece-induced weights):
 
 ## How it works
 
-**Interval errors**: For an n-TET system with step size 1200/n cents, each just-intonation target is approximated by the nearest available step. The error is the absolute difference in cents.
+**Interval errors**: For an n-TET system with step size 1200/n cents, each just-intonation target gets approximated by the nearest available step. The error is the absolute difference in cents.
 
 **Loss functions**: Individual errors are aggregated using weighted L1 (total impurity), weighted L2 (penalises large deviations), or L-infinity (worst single interval).
 
-**Weighting schemes**: Four predefined schemes (uniform, fifth-prioritised, third-prioritised, triadic) reflect different musical traditions. The MIDI analyser induces weights directly from a piece's harmonic content.
+**Weighting schemes**: Four predefined schemes, uniform, fifth-prioritised, third-prioritised, and triadic, reflect different musical traditions. The MIDI analyser induces weights directly from a piece's own harmonic content instead.
 
 **Harmonic similarity**: Two pieces are compared by computing cosine similarity between their normalised weight vectors. This captures whether they make similar demands on the tuning system, independent of length or key.
 
